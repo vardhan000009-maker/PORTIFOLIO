@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palaka Balavardhanaraju | Mechanical Engineer Portfolio</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts: Inter & Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Custom Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            cyan: '#06b6d4',
+                            blue: '#3b82f6',
+                            purple: '#8b5cf6',
+                            emerald: '#10b981',
+                            dark: '#0a0f1d'
+                        }
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 8s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                        'spin-slow': 'spin 20s linear infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-15px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom Styles for Glassmorphism & Effects -->
+    <style>
+        /* Glassmorphism Core Styling */
+        .glass-panel {
+            background: rgba(15, 23, 42, 0.55);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.125);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        .glass-card {
+            background: rgba(30, 41, 59, 0.45);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .glass-card:hover {
+            background: rgba(30, 41, 59, 0.65);
+            border-color: rgba(6, 182, 212, 0.4);
+            transform: translateY(-6px);
+            box-shadow: 0 12px 30px -10px rgba(6, 182, 212, 0.25);
+        }
+
+        .glass-nav {
+            background: rgba(10, 15, 29, 0.75);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .glass-input {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #ffffff;
+            transition: all 0.3s ease;
+        }
+
+        .glass-input:focus {
+            outline: none;
+            border-color: #06b6d4;
+            box-shadow: 0 0 15px rgba(6, 182, 212, 0.3);
+            background: rgba(15, 23, 42, 0.8);
+        }
+
+        /* Glowing Text Gradient */
+        .text-gradient {
+            background: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #c084fc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .text-gradient-cyan {
+            background: linear-gradient(135deg, #22d3ee 0%, #3b82f6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Ambient Orbs */
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(90px);
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0.5;
+        }
+
+        /* Scrollbar Styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0f1d;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e293b;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #06b6d4;
+        }
+    </style>
+</head>
+
+<body class="bg-[#070b14] text-slate-100 font-sans antialiased selection:bg-cyan-500 selection:text-white overflow-x-hidden relative min-h-screen">
+
+    <!-- Ambient Glowing Background Orbs -->
+    <div class="orb w-96 h-96 bg-cyan-600 top-10 -left-20 animate-pulse-slow"></div>
+    <div class="orb w-[30rem] h-[30rem] bg-purple-700 top-1/3 -right-32 animate-pulse-slow" style="animation-delay: 2s;"></div>
+    <div class="orb w-80 h-80 bg-blue-600 bottom-1/4 left-10 animate-pulse-slow" style="animation-delay: 4s;"></div>
+    <div class="orb w-96 h-96 bg-emerald-600 -bottom-10 right-20 animate-pulse-slow" style="animation-delay: 1s;"></div>
+
+    <!-- Dynamic Grid Overlay -->
+    <div class="fixed inset-0 bg-[linear-gradient(to_right,#1f293710_1px,transparent_1px),linear-gradient(to_bottom,#1f293710_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none z-0"></div>
+
+    <!-- Navigation Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand Logo -->
+                <a href="#hero" class="flex items-center space-x-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-purple-600 flex items-center justify-center font-display font-bold text-xl text-white shadow-lg shadow-cyan-500/20 group-hover:scale-105 transition-transform duration-300">
+                        PB
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-display font-bold text-lg tracking-wider text-white group-hover:text-cyan-400 transition-colors">BALAVARDHANARAJU</span>
+                        <span class="text-[10px] tracking-widest text-cyan-400/80 uppercase font-mono">NIT Andhra Pradesh</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Menu -->
+                <nav class="hidden md:flex items-center space-x-1 glass-panel px-4 py-1.5 rounded-full">
+                    <a href="#about" class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-cyan-400 rounded-full hover:bg-white/5 transition-all">About</a>
+                    <a href="#skills" class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-cyan-400 rounded-full hover:bg-white/5 transition-all">Skills</a>
+                    <a href="#projects" class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-cyan-400 rounded-full hover:bg-white/5 transition-all">Projects</a>
+                    <a href="#education" class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-cyan-400 rounded-full hover:bg-white/5 transition-all">Education</a>
+                    <a href="#contact" class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-cyan-400 rounded-full hover:bg-white/5 transition-all">Contact</a>
+                </nav>
+
+                <!-- CTA Button -->
+                <div class="hidden md:flex items-center">
+                    <a href="#contact" class="relative group overflow-hidden px-5 py-2.5 rounded-xl font-medium text-sm text-white bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 shadow-lg shadow-cyan-500/25 transition-all duration-300 hover:shadow-cyan-500/40 hover:-translate-y-0.5">
+                        <span class="relative z-10 flex items-center gap-2">
+                            <span>Let's Connect</span>
+                            <i class="fa-solid font-bold fa-arrow-right text-xs transition-transform group-hover:translate-x-1"></i>
+                        </span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobileMenuBtn" class="p-2.5 rounded-xl glass-panel text-slate-300 hover:text-white focus:outline-none" aria-label="Toggle Navigation Menu">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobileMenu" class="hidden md:hidden glass-panel border-t border-white/10 px-4 pt-2 pb-6 space-y-2 mt-2">
+            <a href="#about" class="mobile-link block px-4 py-2.5 rounded-lg text-base font-medium text-slate-300 hover:bg-white/10 hover:text-cyan-400 transition-all">About</a>
+            <a href="#skills" class="mobile-link block px-4 py-2.5 rounded-lg text-base font-medium text-slate-300 hover:bg-white/10 hover:text-cyan-400 transition-all">Skills</a>
+            <a href="#projects" class="mobile-link block px-4 py-2.5 rounded-lg text-base font-medium text-slate-300 hover:bg-white/10 hover:text-cyan-400 transition-all">Projects</a>
+            <a href="#education" class="mobile-link block px-4 py-2.5 rounded-lg text-base font-medium text-slate-300 hover:bg-white/10 hover:text-cyan-400 transition-all">Education</a>
+            <a href="#contact" class="mobile-link block px-4 py-2.5 rounded-lg text-base font-medium text-slate-300 hover:bg-white/10 hover:text-cyan-400 transition-all">Contact</a>
+            <div class="pt-2">
+                <a href="#contact" class="mobile-link block w-full text-center py-3 rounded-xl font-medium text-white bg-gradient-to-r from-cyan-500 to-blue-600 shadow-md">
+                    Connect With Me
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="relative z-10 pt-20">
+
+        <!-- HERO SECTION -->
+        <section id="hero" class="min-h-[92vh] flex items-center justify-center py-16 px-4 sm:px-6 lg:px-8 relative">
+            <div class="max-w-6xl mx-auto w-full">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    
+                    <!-- Hero Content Left -->
+                    <div class="lg:col-span-7 space-y-8 text-center lg:text-left">
+                        <!-- Badge -->
+                        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel border border-cyan-500/30 text-cyan-300 text-xs sm:text-sm font-medium animate-float">
+                            <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
+                            <span>B.Tech Mechanical Engineering Student</span>
+                        </div>
+
+                        <!-- Name & Title -->
+                        <div class="space-y-3">
+                            <h2 class="text-sm uppercase tracking-widest text-slate-400 font-semibold font-mono">Greetings & Welcome</h2>
+                            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-display font-extrabold tracking-tight text-white leading-tight">
+                                I'm <span class="text-gradient">Palaka Balavardhanaraju</span>
+                            </h1>
+                            <p class="text-lg sm:text-xl text-slate-300 max-w-2xl font-light leading-relaxed pt-2">
+                                Mechanical Engineering Undergraduate at <span class="text-cyan-400 font-medium">National Institute of Technology Andhra Pradesh</span>. Passionate about thermal analysis, CAD design, automation, and computational mechanics.
+                            </p>
+                        </div>
+
+                        <!-- CTA Buttons -->
+                        <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
+                            <a href="#projects" class="px-7 py-3.5 rounded-xl font-semibold text-sm text-white bg-gradient-to-r from-cyan-500 via-blue-600 to-purple-600 hover:from-cyan-400 hover:to-purple-500 shadow-xl shadow-cyan-500/20 hover:shadow-cyan-500/40 transition-all duration-300 hover:-translate-y-0.5 flex items-center gap-2">
+                                <i class="fa-solid fa-cube text-base"></i>
+                                <span>Explore Projects</span>
+                            </a>
+                            
+                            <a href="#contact" class="px-7 py-3.5 rounded-xl font-semibold text-sm text-slate-200 glass-panel hover:bg-white/10 hover:text-white border border-white/20 transition-all duration-300 hover:-translate-y-0.5 flex items-center gap-2">
+                                <i class="fa-solid fa-envelope text-base text-cyan-400"></i>
+                                <span>Get In Touch</span>
+                            </a>
+
+                            <button onclick="downloadResumeMock()" class="px-5 py-3.5 rounded-xl font-semibold text-sm text-slate-300 glass-panel hover:bg-white/10 hover:text-cyan-400 border border-white/15 transition-all duration-300 hover:-translate-y-0.5 flex items-center gap-2" title="Download Resume">
+                                <i class="fa-solid fa-file-arrow-down text-base"></i>
+                                <span>CV / Resume</span>
+                            </button>
+                        </div>
+
+                        <!-- Highlights Tags -->
+                        <div class="pt-6 border-t border-slate-800/80 flex flex-wrap justify-center lg:justify-start gap-3 text-xs text-slate-400">
+                            <span class="px-3 py-1.5 rounded-lg glass-card flex items-center gap-2">
+                                <i class="fa-solid fa-gear text-cyan-400"></i> CAD Modelling
+                            </span>
+                            <span class="px-3 py-1.5 rounded-lg glass-card flex items-center gap-2">
+                                <i class="fa-solid fa-fire text-orange-400"></i> Thermo-Fluid Systems
+                            </span>
+                            <span class="px-3 py-1.5 rounded-lg glass-card flex items-center gap-2">
+                                <i class="fa-solid fa-chart-line text-purple-400"></i> FEA & Simulation
+                            </span>
+                            <span class="px-3 py-1.5 rounded-lg glass-card flex items-center gap-2">
+                                <i class="fa-solid fa-code text-emerald-400"></i> MATLAB & Python
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Hero Visual Card Right -->
+                    <div class="lg:col-span-5 flex justify-center">
+                        <div class="relative w-full max-w-md">
+                            <!-- Outer Glowing Ring -->
+                            <div class="absolute -inset-1 rounded-3xl bg-gradient-to-r from-cyan-500 via-blue-600 to-purple-600 opacity-40 blur-xl animate-pulse-slow"></div>
+                            
+                            <!-- Glass Profile Card -->
+                            <div class="relative rounded-3xl glass-panel p-8 space-y-6 overflow-hidden">
+                                <div class="flex items-center justify-between border-b border-white/10 pb-6">
+                                    <div class="flex items-center space-x-4">
+                                        <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-cyan-400 to-purple-600 p-0.5 shadow-lg">
+                                            <div class="w-full h-full bg-slate-950 rounded-[14px] flex items-center justify-center">
+                                                <i class="fa-solid fa-user-gear text-2xl text-cyan-400"></i>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <h3 class="font-display font-bold text-lg text-white">Engineering Profile</h3>
+                                            <p class="text-xs text-cyan-400 font-mono">NIT AP Student</p>
+                                        </div>
+                                    </div>
+                                    <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+                                        Active Student
+                                    </span>
+                                </div>
+
+                                <!-- Dynamic Specs -->
+                                <div class="space-y-3 font-mono text-sm">
+                                    <div class="flex justify-between p-3 rounded-xl bg-white/5 border border-white/5">
+                                        <span class="text-slate-400">Institution:</span>
+                                        <span class="text-white font-semibold">NIT Andhra Pradesh</span>
+                                    </div>
+                                    <div class="flex justify-between p-3 rounded-xl bg-white/5 border border-white/5">
+                                        <span class="text-slate-400">Degree:</span>
+                                        <span class="text-white font-semibold">B.Tech Mechanical</span>
+                                    </div>
+                                    <div class="flex justify-between p-3 rounded-xl bg-white/5 border border-white/5">
+                                        <span class="text-slate-400">Domain Focus:</span>
+                                        <span class="text-cyan-400 font-semibold">Design & Simulation</span>
+                                    </div>
+                                    <div class="flex justify-between p-3 rounded-xl bg-white/5 border border-white/5">
+                                        <span class="text-slate-400">Location:</span>
+                                        <span class="text-white font-semibold">Tadepalligudem, AP</span>
+                                    </div>
+                                </div>
+
+                                <!-- Interactive Gear Graphic -->
+                                <div class="pt-2 flex items-center justify-center gap-4 text-slate-500">
+                                    <i class="fa-solid fa-gear text-4xl text-cyan-500/40 animate-spin-slow"></i>
+                                    <div class="h-px bg-white/10 flex-1"></div>
+                                    <i class="fa-solid fa-microchip text-2xl text-purple-500/40"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- STATS SECTION -->
+        <section class="py-10 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+                    
+                    <div class="glass-card p-6 rounded-2xl text-center space-y-2">
+                        <div class="text-3xl sm:text-4xl font-display font-extrabold text-cyan-400 counter" data-target="4">0</div>
+                        <p class="text-xs sm:text-sm text-slate-300 font-medium">Years of Engineering</p>
+                    </div>
+
+                    <div class="glass-card p-6 rounded-2xl text-center space-y-2">
+                        <div class="text-3xl sm:text-4xl font-display font-extrabold text-purple-400 counter" data-target="8">0</div>
+                        <p class="text-xs sm:text-sm text-slate-300 font-medium">CAD & Software Tools</p>
+                    </div>
+
+                    <div class="glass-card p-6 rounded-2xl text-center space-y-2">
+                        <div class="text-3xl sm:text-4xl font-display font-extrabold text-blue-400 counter" data-target="6">0</div>
+                        <p class="text-xs sm:text-sm text-slate-300 font-medium">Academic Projects</p>
+                    </div>
+
+                    <div class="glass-card p-6 rounded-2xl text-center space-y-2">
+                        <div class="text-3xl sm:text-4xl font-display font-extrabold text-emerald-400 counter" data-target="100">0</div>
+                        <p class="text-xs sm:text-sm text-slate-300 font-medium">% Passion for Mechanics</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT ME SECTION -->
+        <section id="about" class="py-20 px-4 sm:px-6 lg:px-8 relative">
+            <div class="max-w-6xl mx-auto">
+                <!-- Section Title -->
+                <div class="text-center space-y-3 mb-16">
+                    <h2 class="text-xs font-mono font-bold tracking-widest text-cyan-400 uppercase">Background & Philosophy</h2>
+                    <h3 class="text-3xl sm:text-4xl font-display font-extrabold text-white">About Me</h3>
+                    <div class="w-16 h-1 bg-gradient-to-r from-cyan-500 to-purple-600 mx-auto rounded-full"></div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+                    <!-- About Main Text -->
+                    <div class="lg:col-span-7 glass-panel p-8 sm:p-10 rounded-3xl space-y-6 flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <h4 class="text-2xl font-display font-bold text-white flex items-center gap-3">
+                                <i class="fa-solid fa-compass-drafting text-cyan-400"></i>
+                                Bridging Theory & Engineering Innovation
+                            </h4>
+                            <p class="text-slate-300 leading-relaxed font-light">
+                                Hello! I am <strong class="text-white">PALAKA BALAVARDHANARAJU</strong>, currently pursuing my Bachelor of Technology in Mechanical Engineering at the prestigiou <strong class="text-cyan-300">National Institute of Technology Andhra Pradesh (NIT AP)</strong>. 
+                            </p>
+                            <p class="text-slate-300 leading-relaxed font-light">
+                                My academic journey is driven by a strong fascination for mechanics, thermofluids, machine design, and automated systems. I take pride in applying mathematical rigor and CAD simulation tools to solve real-world mechanical problems efficiently.
+                            </p>
+                            <p class="text-slate-300 leading-relaxed font-light">
+                                Beyond the classroom, I am constantly exploring CAD/CAM software, finite element analysis (FEA), computational fluid dynamics (CFD), and integrating modern programming languages like Python and MATLAB for data-driven engineering models.
+                            </p>
+                        </div>
+
+                        <!-- Core Strengths Pills -->
+                        <div class="pt-6 border-t border-white/10 grid grid-cols-2 sm:grid-cols-3 gap-3">
+                            <div class="p-3 rounded-xl bg-white/5 text-center">
+                                <i class="fa-solid fa-lightbulb text-cyan-400 mb-1 text-lg"></i>
+                                <p class="text-xs text-slate-300 font-medium">Analytical Mindset</p>
+                            </div>
+                            <div class="p-3 rounded-xl bg-white/5 text-center">
+                                <i class="fa-solid fa-microchip text-purple-400 mb-1 text-lg"></i>
+                                <p class="text-xs text-slate-300 font-medium">Simulations</p>
+                            </div>
+                            <div class="p-3 rounded-xl bg-white/5 text-center col-span-2 sm:col-span-1">
+                                <i class="fa-solid fa-people-group text-emerald-400 mb-1 text-lg"></i>
+                                <p class="text-xs text-slate-300 font-medium">Team Leadership</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Side Cards: Values & Aspirations -->
+                    <div class="lg:col-span-5 space-y-6 flex flex-col justify-between">
+                        <!-- Card 1 -->
+                        <div class="glass-card p-6 rounded-2xl border-l-4 border-l-cyan-500 space-y-2">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center font-bold">
+                                    <i class="fa-solid fa-bullseye"></i>
+                                </div>
+                                <h5 class="font-display font-bold text-white text-lg">My Career Objective</h5>
+                            </div>
+                            <p class="text-slate-300 text-sm font-light leading-relaxed">
+                                To leverage my mechanical engineering foundation and technical skill set in an innovative R&D or core industrial setting, contributing to impactful technological advancements.
+                            </p>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="glass-card p-6 rounded-2xl border-l-4 border-l-purple-500 space-y-2">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center font-bold">
+                                    <i class="fa-solid fa-building-columns"></i>
+                                </div>
+                                <h5 class="font-display font-bold text-white text-lg">Academic Excellence</h5>
+                            </div>
+                            <p class="text-slate-300 text-sm font-light leading-relaxed">
+                                Under the mentorship of distinguished faculty at NIT Andhra Pradesh, I am building strong fundamentals in Fluid Mechanics, Thermodynamics, Kinematics, and Manufacturing Technology.
+                            </p>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="glass-card p-6 rounded-2xl border-l-4 border-l-emerald-500 space-y-2">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold">
+                                    <i class="fa-solid fa-laptop-code"></i>
+                                </div>
+                                <h5 class="font-display font-bold text-white text-lg">Tech Integration</h5>
+                            </div>
+                            <p class="text-slate-300 text-sm font-light leading-relaxed">
+                                Passionate about blending traditional mechanical engineering with modern software solutions, automation tools, and smart manufacturing paradigms.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS SECTION -->
+        <section id="skills" class="py-20 px-4 sm:px-6 lg:px-8 relative">
+            <div class="max-w-6xl mx-auto">
+                <!-- Section Header -->
+                <div class="text-center space-y-3 mb-16">
+                    <h2 class="text-xs font-mono font-bold tracking-widest text-cyan-400 uppercase">Technical Proficiency</h2>
+                    <h3 class="text-3xl sm:text-4xl font-display font-extrabold text-white">Skills & Expertise</h3>
+                    <div class="w-16 h-1 bg-gradient-to-r from-cyan-500 to-purple-600 mx-auto rounded-full"></div>
+                </div>
+
+                <!-- Skill Categories Filter Tabs -->
+                <div class="flex justify-center mb-10 overflow-x-auto pb-2">
+                    <div class="glass-panel p-1.5 rounded-2xl flex space-x-2">
+                        <button onclick="switchTab('all')" class="tab-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-300 bg-cyan-500 text-white shadow-lg shadow-cyan-500/30" data-tab="all">All Skills</button>
+                        <button onclick="switchTab('cad')" class="tab-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:text-white hover:bg-white/10 transition-all duration-300" data-tab="cad">Design & CAD</button>
+                        <button onclick="switchTab('analysis')" class="tab-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:text-white hover:bg-white/10 transition-all duration-300" data-tab="analysis">Thermal & FEA</button>
+                        <button onclick="switchTab('programming')" class="tab-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:text-white hover:bg-white/10 transition-all duration-300" data-tab="programming">Programming</button>
+                    </div>
+                </div>
+
+                <!-- Skills Grid Container -->
+                <div id="skillsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                    <!-- Skill 1 -->
+                    <div class="skill-item glass-card p-6 rounded-2xl space-y-4" data-category="cad">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-12 h-12 rounded-xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-xl">
+                                    <i class="fa-solid fa-cube"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-display font-bold text-white text-lg">SolidWorks</h4>
+                                    <span class="text-xs text-slate-400">3D Modeling & Assembly</span>
+                                </div>
+                            </div>
+                            <span class="text-xs font-mono font-bold text-cyan-400">90%</span>
+                        </div>
+                        <div class="w-full h-2 bg-slate-800 rounded-full overflow-hidden">
+                            <div class="h-full bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full" style="width: 90%;"></div>
+                        </div>
+                    </div>
+
+                    <!-- Skill 2 -->
+                    <div class="skill-item glass-card p-6 rounded-2xl space-y-4" data-category="cad">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-12 h-12 rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center text-xl">
+                                    <i class="fa-solid fa-pen-ruler"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-display font-bold text-white text-lg">AutoCAD</h4>
+                                    <span class="text-xs text-slate-400">2D Technical Drafting</span>
+                                </div>
+                            </div>
+                            <span class="text-xs font-mono font-bold text-blue-400">85%</span>
+                        </div>
+                        <div class="w-full h-2 bg-slate-800 rounded-full overflow-hidden">
+                            <div class="h-full bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full" style="width: 85%;"></div>
+                        </div>
+                    </div>
+
+                    <!-- Skill 3 -->
+                    <div class="skill-item glass-card p-6 rounded-2xl space-y-4" data-category="analysis">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-12 h-12 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center text-xl">
+                                    <i class="fa-solid fa-atom"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-display font-bold text-white text-lg">ANSYS Workbench</h4>
+                                    <span class="text-xs text-slate-400">FEA & Thermal Analysis</span>
+                                </div>
+                            </div>
+                            <span class="text-xs font-mono font-bold text-purple-400">80%</span>
+                        </div>
+                        <div class="w-full h-2 bg-slate-800 rounded-full overflow-hidden">
+                            <div class="h-full bg-gradient-to-r from-purple-500 to-pink-500 rounded-full" style="width: 80%;"></div>
+                        </div>
+                    </div>
+
+                    <!-- Skill 4 -->
+                    <div class="skill-item glass-card p-6 rounded-2xl space-y-4" data-category="programming">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xl">
+                                    <i class="fa-solid fa-code"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-display font-bold text-white text-lg">MATLAB</h4>
+                                    <span class="text-xs text-slate-400">Numerical Computation</span>
+                                </div>
+                            </div>
+                            <span class="text-xs font-mono font-bold text-emerald-400">82%</span>
+                        </div>
+                        <div class="w-full h-2 bg-slate-800 rounded-full overflow-hidden">
+                            <div class="h-full bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full" style="width: 82%;"></div>
+                        </div>
+                    </div>
+
+                    <!-- Skill 5 -->
+                    <div class="skill-item glass-card p-6 rounded-2xl space-y-4" data-category="programming">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-12 h-12 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-xl">
+                                    <i class="fa-brands fa-python"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-display font-bold text-white text-lg">Python</h4>
+                                    <span class="text-xs text-slate-400">Engineering Scripts & Plotting</span>
+                                </div>
+                            </div>
+                            <span class="text-xs font-mono font-bold text-amber-400">78%</span>
+                        </div>
+                        <div class="w-full h-2 bg-slate-800 rounded-full overflow-hidden">
+                            <div class="h-full bg-gradient-to-r from-amber-500 to-orange-500 rounded-full" style="width: 78%;"></div>
+                        </div>
+                    </div>
+
+                    <!-- Skill 6 -->
+                    <div class="skill-item glass-card p-6 rounded-2xl space-y-4" data-category="analysis">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-12 h-12 rounded-xl bg-rose-500/20 text-rose-400 flex items-center justify-center text-xl">
+                                    <i class="fa-solid fa-temperature-arrow-up"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-display font-bold text-white text-lg">Thermodynamics</h4>
+                                    <span class="text-xs text-slate-400">Heat Transfer & Fluid Flow</span>
+                                </div>
+                            </div>
+                            <span class="text-xs font-mono font-bold text-rose-400">88%</span>
+                        </div>
+                        <div class="w-full h-2 bg-slate-800 rounded-full overflow-hidden">
+                            <div class="h-full bg-gradient-to-r from-rose-500 to-red-500 rounded-full" style="width: 88%;"></div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Soft Skills Banner -->
+                <div class="mt-12 glass-panel p-6 sm:p-8 rounded-3xl border border-white/10">
+                    <h4 class="text-center font-display font-bold text-white text-lg mb-6">Professional Soft Skills</h4>
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
+                        <div class="p-3 rounded-xl bg-white/5 text-slate-300 font-medium text-sm">
+                            <i class="fa-solid fa-brain text-cyan-400 mr-2"></i> Problem Solving
+                        </div>
+                        <div class="p-3 rounded-xl bg-white/5 text-slate-300 font-medium text-sm">
+                            <i class="fa-solid fa-comments text-purple-400 mr-2"></i> Team Communication
+                        </div>
+                        <div class="p-3 rounded-xl bg-white/5 text-slate-300 font-medium text-sm">
+                            <i class="fa-solid fa-clock text-emerald-400 mr-2"></i> Project Management
+                        </div>
+                        <div class="p-3 rounded-xl bg-white/5 text-slate-300 font-medium text-sm">
+                            <i class="fa-solid fa-magnifying-glass-chart text-amber-400 mr-2"></i> Critical Thinking
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- PROJECTS SHOWCASE SECTION -->
+        <section id="projects" class="py-20 px-4 sm:px-6 lg:px-8 relative">
+            <div class="max-w-6xl mx-auto">
+                <!-- Section Header -->
+                <div class="text-center space-y-3 mb-16">
+                    <h2 class="text-xs font-mono font-bold tracking-widest text-cyan-400 uppercase">Portfolio Highlights</h2>
+                    <h3 class="text-3xl sm:text-4xl font-display font-extrabold text-white">Mechanical Projects</h3>
+                    <div class="w-16 h-1 bg-gradient-to-r from-cyan-500 to-purple-600 mx-auto rounded-full"></div>
+                </div>
+
+                <!-- Projects Cards Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+                    <!-- Project Card 1 -->
+                    <div class="glass-card rounded-3xl p-6 sm:p-8 space-y-6 relative overflow-hidden flex flex-col justify-between group">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <span class="px-3 py-1 rounded-full text-xs font-mono font-semibold bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">
+                                    Thermal Systems
+                                </span>
+                                <span class="text-slate-500 text-xs">NIT AP Academic</span>
+                            </div>
+                            <h4 class="text-xl sm:text-2xl font-display font-bold text-white group-hover:text-cyan-400 transition-colors">
+                                Thermal Performance Simulation of Heat Exchanger
+                            </h4>
+                            <p class="text-slate-300 text-sm font-light leading-relaxed">
+                                Modeled and simulated a counter-flow shell and tube heat exchanger using ANSYS Fluent and MATLAB. Evaluated thermal effectiveness and pressure drop characteristics under varying mass flow rates.
+                            </p>
+                            <!-- Tech Badges -->
+                            <div class="flex flex-wrap gap-2 pt-2">
+                                <span class="px-2.5 py-1 rounded-lg bg-white/5 text-xs text-slate-300">ANSYS Fluent</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-white/5 text-xs text-slate-300">MATLAB</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-white/5 text-xs text-slate-300">Heat Transfer</span>
+                            </div>
+                        </div>
+                        <div class="pt-6 border-t border-white/10 flex items-center justify-between">
+                            <button onclick="openProjectModal('Thermal Performance Simulation', 'Detailed numerical modeling of heat exchanger performance including fluid velocity profiles, thermal boundary layer growth, and effectiveness calculations. Validated analytical equations against CFD simulation output with minimal margin of error.')" class="text-cyan-400 text-sm font-semibold hover:text-cyan-300 flex items-center gap-2">
+                                <span>Read Project Details</span>
+                                <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </button>
+                            <i class="fa-solid fa-fire-flame-simple text-slate-600 text-xl group-hover:text-cyan-400 transition-colors"></i>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 2 -->
+                    <div class="glass-card rounded-3xl p-6 sm:p-8 space-y-6 relative overflow-hidden flex flex-col justify-between group">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <span class="px-3 py-1 rounded-full text-xs font-mono font-semibold bg-purple-500/20 text-purple-300 border border-purple-500/30">
+                                    CAD & Kinematics
+                                </span>
+                                <span class="text-slate-500 text-xs">Design Project</span>
+                            </div>
+                            <h4 class="text-xl sm:text-2xl font-display font-bold text-white group-hover:text-purple-400 transition-colors">
+                                Automated Gearbox Assembly & Stress Analysis
+                            </h4>
+                            <p class="text-slate-300 text-sm font-light leading-relaxed">
+                                Complete 3D CAD design of a multi-stage reduction gearbox in SolidWorks. Conducted structural FEA analysis to determine von Mises stress concentration on gear teeth under max torque load.
+                            </p>
+                            <!-- Tech Badges -->
+                            <div class="flex flex-wrap gap-2 pt-2">
+                                <span class="px-2.5 py-1 rounded-lg bg-white/5 text-xs text-slate-300">SolidWorks</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-white/5 text-xs text-slate-300">FEA</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-white/5 text-xs text-slate-300">Machine Design</span>
+                            </div>
+                        </div>
+                        <div class="pt-6 border-t border-white/10 flex items-center justify-between">
+                            <button onclick="openProjectModal('Automated Gearbox Design', 'Designed spur and helical gear pairs in SolidWorks with full parametric constraints. Analyzed bending and contact stress distributions on gear teeth using static structural FEA to ensure structural integrity and optimization.')" class="text-purple-400 text-sm font-semibold hover:text-purple-300 flex items-center gap-2">
+                                <span>Read Project Details</span>
+                                <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </button>
+                            <i class="fa-solid fa-gears text-slate-600 text-xl group-hover:text-purple-400 transition-colors"></i>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 3 -->
+                    <div class="glass-card rounded-3xl p-6 sm:p-8 space-y-6 relative overflow-hidden flex flex-col justify-between group">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <span class="px-3 py-1 rounded-full text-xs font-mono font-semibold bg-blue-500/20 text-blue-300 border border-blue-500/30">
+                                    Robotics & Automation
+                                </span>
+                                <span class="text-slate-500 text-xs">Prototype Mechanics</span>
+                            </div>
+                            <h4 class="text-xl sm:text-2xl font-display font-bold text-white group-hover:text-blue-400 transition-colors">
+                                Four-Bar Linkage Mechanism Optimization
+                            </h4>
+                            <p class="text-slate-300 text-sm font-light leading-relaxed">
+                                Designed and fabricated a mechanical linkage system for robotic picking operations. Used Python scripts to calculate Grashof conditions, link length ratios, and coupler curve trajectories.
+                            </p>
+                            <!-- Tech Badges -->
+                            <div class="flex flex-wrap gap-2 pt-2">
+                                <span class="px-2.5 py-1 rounded-lg bg-white/5 text-xs text-slate-300">Kinematics</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-white/5 text-xs text-slate-300">Python</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-white/5 text-xs text-slate-300">Robotics</span>
+                            </div>
+                        </div>
+                        <div class="pt-6 border-t border-white/10 flex items-center justify-between">
+                            <button onclick="openProjectModal('Four-Bar Linkage Optimization', 'Synthesized mechanism dimensions for specific path generation required in industrial pick-and-place robotics. Applied kinematic motion scripts in Python to evaluate velocity and acceleration vectors.')" class="text-blue-400 text-sm font-semibold hover:text-blue-300 flex items-center gap-2">
+                                <span>Read Project Details</span>
+                                <i class="fa-solid fa-robot text-slate-600 text-xl group-hover:text-blue-400 transition-colors"></i>
+                            </button>
+                            <i class="fa-solid fa-robot text-slate-600 text-xl group-hover:text-blue-400 transition-colors"></i>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 4 -->
+                    <div class="glass-card rounded-3xl p-6 sm:p-8 space-y-6 relative overflow-hidden flex flex-col justify-between group">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <span class="px-3 py-1 rounded-full text-xs font-mono font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+                                    Aerodynamics
+                                </span>
+                                <span class="text-slate-500 text-xs">CFD Study</span>
+                            </div>
+                            <h4 class="text-xl sm:text-2xl font-display font-bold text-white group-hover:text-emerald-400 transition-colors">
+                                Airfoil Aerodynamic Drag & Lift Analysis
+                            </h4>
+                            <p class="text-slate-300 text-sm font-light leading-relaxed">
+                                Conducted 2D CFD aerodynamic analysis over NACA 4-digit series airfoils at various angles of attack. Plotted drag coefficient ($C_d$) vs. lift coefficient ($C_l$) to pinpoint stall angles.
+                            </p>
+                            <!-- Tech Badges -->
+                            <div class="flex flex-wrap gap-2 pt-2">
+                                <span class="px-2.5 py-1 rounded-lg bg-white/5 text-xs text-slate-300">CFD</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-white/5 text-xs text-slate-300">Fluid Dynamics</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-white/5 text-xs text-slate-300">AutoCAD</span>
+                            </div>
+                        </div>
+                        <div class="pt-6 border-t border-white/10 flex items-center justify-between">
+                            <button onclick="openProjectModal('Airfoil Aerodynamic Drag Analysis', 'Investigated aerodynamic characteristics across varying Reynolds numbers. Validated boundary layer separation points and vortex shedding behavior around standard aerodynamic profiles.')" class="text-emerald-400 text-sm font-semibold hover:text-emerald-300 flex items-center gap-2">
+                                <span>Read Project Details</span>
+                                <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </button>
+                            <i class="fa-solid fa-wind text-slate-600 text-xl group-hover:text-emerald-400 transition-colors"></i>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- EDUCATION & BACKGROUND SECTION -->
+        <section id="education" class="py-20 px-4 sm:px-6 lg:px-8 relative">
+            <div class="max-w-6xl mx-auto">
+                <!-- Section Header -->
+                <div class="text-center space-y-3 mb-16">
+                    <h2 class="text-xs font-mono font-bold tracking-widest text-cyan-400 uppercase">Academic Journey</h2>
+                    <h3 class="text-3xl sm:text-4xl font-display font-extrabold text-white">Education & Institution</h3>
+                    <div class="w-16 h-1 bg-gradient-to-r from-cyan-500 to-purple-600 mx-auto rounded-full"></div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    
+                    <!-- NIT AP Main Card -->
+                    <div class="lg:col-span-8 glass-panel p-8 sm:p-10 rounded-3xl space-y-6 relative overflow-hidden border border-cyan-500/20">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-white/10 pb-6">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center text-2xl text-white font-bold shadow-lg shadow-cyan-500/30">
+                                    <i class="fa-solid fa-graduation-cap"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-2xl font-display font-bold text-white">Bachelor of Technology (B.Tech)</h4>
+                                    <p class="text-cyan-400 font-medium">Mechanical Engineering</p>
+                                </div>
+                            </div>
+                            <span class="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-mono bg-cyan-500/10 text-cyan-300 border border-cyan-500/30 self-start sm:self-auto">
+                                NIT Andhra Pradesh
+                            </span>
+                        </div>
+
+                        <div class="space-y-4 text-slate-300 font-light leading-relaxed">
+                            <p>
+                                Currently pursuing B.Tech in Mechanical Engineering at <strong class="text-white">National Institute of Technology Andhra Pradesh</strong>, an Institute of National Importance. 
+                            </p>
+                            <p>
+                                Engaging in rigorous coursework including Mechanics of Solids, Fluid Dynamics, Heat Transfer, Theory of Machines, Manufacturing Technology, and Computational Engineering Tools.
+                            </p>
+                        </div>
+
+                        <!-- Core Modules Grid -->
+                        <div class="space-y-2">
+                            <h5 class="text-xs font-mono uppercase tracking-wider text-slate-400 font-semibold">Key Coursework Highlights:</h5>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/5 text-xs text-slate-300">Fluid Mechanics</span>
+                                <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/5 text-xs text-slate-300">Thermodynamics</span>
+                                <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/5 text-xs text-slate-300">Strength of Materials</span>
+                                <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/5 text-xs text-slate-300">Machine Design</span>
+                                <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/5 text-xs text-slate-300">Heat Transfer</span>
+                                <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/5 text-xs text-slate-300">CAD/CAM Automation</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Info Sidebar -->
+                    <div class="lg:col-span-4 space-y-6">
+                        <!-- Campus Badge -->
+                        <div class="glass-card p-6 rounded-3xl space-y-4 text-center">
+                            <div class="w-12 h-12 rounded-2xl bg-purple-500/20 text-purple-400 mx-auto flex items-center justify-center text-xl">
+                                <i class="fa-solid fa-map-location-dot"></i>
+                            </div>
+                            <h5 class="font-display font-bold text-white text-lg">Campus Location</h5>
+                            <p class="text-slate-300 text-sm font-light">
+                                NIT Andhra Pradesh Campus, Tadepalligudem, West Godavari District, Andhra Pradesh - 534101
+                            </p>
+                        </div>
+
+                        <!-- Academic Commitment -->
+                        <div class="glass-card p-6 rounded-3xl space-y-4 text-center">
+                            <div class="w-12 h-12 rounded-2xl bg-emerald-500/20 text-emerald-400 mx-auto flex items-center justify-center text-xl">
+                                <i class="fa-solid fa-award"></i>
+                            </div>
+                            <h5 class="font-display font-bold text-white text-lg">Engineering Passion</h5>
+                            <p class="text-slate-300 text-sm font-light">
+                                Focused on combining analytical engineering theory with practical software prototyping and lab experiments.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 relative">
+            <div class="max-w-6xl mx-auto">
+                <!-- Section Header -->
+                <div class="text-center space-y-3 mb-16">
+                    <h2 class="text-xs font-mono font-bold tracking-widest text-cyan-400 uppercase">Get In Touch</h2>
+                    <h3 class="text-3xl sm:text-4xl font-display font-extrabold text-white">Contact & Collaboration</h3>
+                    <div class="w-16 h-1 bg-gradient-to-r from-cyan-500 to-purple-600 mx-auto rounded-full"></div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                    
+                    <!-- Contact Info Column Left -->
+                    <div class="lg:col-span-5 space-y-6">
+                        <div class="glass-panel p-8 rounded-3xl space-y-6">
+                            <h4 class="text-2xl font-display font-bold text-white">Let's talk about projects or ideas!</h4>
+                            <p class="text-slate-300 text-sm font-light leading-relaxed">
+                                I am always open to discussing mechanical engineering projects, research collaborations, internships, or technical opportunities.
+                            </p>
+
+                            <div class="space-y-4 pt-2">
+                                <!-- Email Card -->
+                                <div class="flex items-center space-x-4 p-4 rounded-2xl glass-card">
+                                    <div class="w-12 h-12 rounded-xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-xl shrink-0">
+                                        <i class="fa-solid fa-envelope"></i>
+                                    </div>
+                                    <div class="overflow-hidden">
+                                        <p class="text-xs text-slate-400 font-mono">Email Me</p>
+                                        <a href="mailto:balavardhanaraju@nitandhra.ac.in" class="text-sm font-semibold text-white hover:text-cyan-400 transition-colors truncate block">
+                                            balavardhanaraju@nitandhra.ac.in
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- Institute Card -->
+                                <div class="flex items-center space-x-4 p-4 rounded-2xl glass-card">
+                                    <div class="w-12 h-12 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center text-xl shrink-0">
+                                        <i class="fa-solid fa-building-columns"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-xs text-slate-400 font-mono">Department & Institute</p>
+                                        <p class="text-sm font-semibold text-white">
+                                            Dept. of Mechanical Engineering, NIT AP
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <!-- Location Card -->
+                                <div class="flex items-center space-x-4 p-4 rounded-2xl glass-card">
+                                    <div class="w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xl shrink-0">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-xs text-slate-400 font-mono">Location</p>
+                                        <p class="text-sm font-semibold text-white">
+                                            Tadepalligudem, Andhra Pradesh, India
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Social Links -->
+                            <div class="pt-4 border-t border-white/10 flex items-center gap-3">
+                                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="w-11 h-11 rounded-xl glass-card text-slate-300 hover:text-cyan-400 hover:border-cyan-500/40 flex items-center justify-center transition-all">
+                                    <i class="fa-brands fa-linkedin-in text-lg"></i>
+                                </a>
+                                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="w-11 h-11 rounded-xl glass-card text-slate-300 hover:text-purple-400 hover:border-purple-500/40 flex items-center justify-center transition-all">
+                                    <i class="fa-brands fa-github text-lg"></i>
+                                </a>
+                                <a href="mailto:balavardhanaraju@nitandhra.ac.in" class="w-11 h-11 rounded-xl glass-card text-slate-300 hover:text-emerald-400 hover:border-emerald-500/40 flex items-center justify-center transition-all">
+                                    <i class="fa-solid fa-at text-lg"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Glassmorphism Form Column Right -->
+                    <div class="lg:col-span-7">
+                        <form id="contactForm" onsubmit="handleFormSubmit(event)" class="glass-panel p-8 sm:p-10 rounded-3xl space-y-6 relative border border-white/10">
+                            
+                            <!-- Success Message Toast Container inside Form -->
+                            <div id="formAlert" class="hidden p-4 rounded-xl bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-sm flex items-center gap-3">
+                                <i class="fa-solid fa-circle-check text-lg"></i>
+                                <span>Thank you, message sent successfully! I will get back to you soon.</span>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <div class="space-y-2">
+                                    <label for="name" class="text-xs font-mono uppercase tracking-wider text-slate-300">Your Name</label>
+                                    <input type="text" id="name" required placeholder="Palaka Balavardhanaraju" class="w-full px-4 py-3.5 rounded-xl glass-input text-sm">
+                                </div>
+                                <div class="space-y-2">
+                                    <label for="email" class="text-xs font-mono uppercase tracking-wider text-slate-300">Your Email</label>
+                                    <input type="email" id="email" required placeholder="example@domain.com" class="w-full px-4 py-3.5 rounded-xl glass-input text-sm">
+                                </div>
+                            </div>
+
+                            <div class="space-y-2">
+                                <label for="subject" class="text-xs font-mono uppercase tracking-wider text-slate-300">Subject</label>
+                                <input type="text" id="subject" required placeholder="Project Inquiry / Collaboration" class="w-full px-4 py-3.5 rounded-xl glass-input text-sm">
+                            </div>
+
+                            <div class="space-y-2">
+                                <label for="message" class="text-xs font-mono uppercase tracking-wider text-slate-300">Message</label>
+                                <textarea id="message" rows="5" required placeholder="Write your message or project requirements here..." class="w-full px-4 py-3.5 rounded-xl glass-input text-sm resize-none"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full py-4 rounded-xl font-semibold text-sm text-white bg-gradient-to-r from-cyan-500 via-blue-600 to-purple-600 hover:from-cyan-400 hover:to-purple-500 shadow-xl shadow-cyan-500/25 transition-all duration-300 hover:shadow-cyan-500/40 flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-paper-plane"></i>
+                                <span>Send Message</span>
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="relative z-10 glass-nav border-t border-white/10 py-10 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="text-center sm:text-left">
+                <p class="font-display font-bold text-base text-white">PALAKA BALAVARDHANARAJU</p>
+                <p class="text-xs text-slate-400">Mechanical Engineering Student • NIT Andhra Pradesh</p>
+            </div>
+            <p class="text-xs text-slate-400 text-center">
+                &copy; <span id="year"></span> All rights reserved. Built with Glassmorphism UI.
+            </p>
+        </div>
+    </footer>
+
+    <!-- MODAL FOR PROJECT DETAILS -->
+    <div id="projectModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md">
+        <div class="glass-panel max-w-xl w-full p-8 rounded-3xl space-y-6 relative border border-white/20 animate-float">
+            <button onclick="closeProjectModal()" class="absolute top-6 right-6 w-10 h-10 rounded-full glass-card flex items-center justify-center text-slate-400 hover:text-white">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+            <h4 id="modalTitle" class="text-2xl font-display font-bold text-white pr-8">Project Title</h4>
+            <div class="w-12 h-1 bg-cyan-400 rounded-full"></div>
+            <p id="modalDescription" class="text-slate-300 text-sm leading-relaxed font-light">
+                Detailed description content here...
+            </p>
+            <div class="pt-4 flex justify-end">
+                <button onclick="closeProjectModal()" class="px-6 py-2.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-white font-semibold text-sm transition-all">
+                    Close Details
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Set dynamic current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile Navigation Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Skills Tab Filter Functionality
+        function switchTab(category) {
+            const buttons = document.querySelectorAll('.tab-btn');
+            const items = document.querySelectorAll('.skill-item');
+
+            buttons.forEach(btn => {
+                if (btn.getAttribute('data-tab') === category) {
+                    btn.classList.add('bg-cyan-500', 'text-white', 'shadow-lg', 'shadow-cyan-500/30');
+                    btn.classList.remove('text-slate-300', 'hover:bg-white/10');
+                } else {
+                    btn.classList.remove('bg-cyan-500', 'text-white', 'shadow-lg', 'shadow-cyan-500/30');
+                    btn.classList.add('text-slate-300', 'hover:bg-white/10');
+                }
+            });
+
+            items.forEach(item => {
+                if (category === 'all' || item.getAttribute('data-category') === category) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // Project Modal Logic
+        function openProjectModal(title, description) {
+            document.getElementById('modalTitle').textContent = title;
+            document.getElementById('modalDescription').textContent = description;
+            document.getElementById('projectModal').classList.remove('hidden');
+        }
+
+        function closeProjectModal() {
+            document.getElementById('projectModal').classList.add('hidden');
+        }
+
+        // Contact Form Submission Handler
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const alertBox = document.getElementById('formAlert');
+            alertBox.classList.remove('hidden');
+            
+            // Reset form fields
+            document.getElementById('contactForm').reset();
+
+            // Auto-hide alert message after 5 seconds
+            setTimeout(() => {
+                alertBox.classList.add('hidden');
+            }, 5000);
+        }
+
+        // Resume Download Notification Mock
+        function downloadResumeMock() {
+            const toast = document.createElement('div');
+            toast.className = 'fixed bottom-6 right-6 z-50 glass-panel px-6 py-4 rounded-2xl border border-cyan-500/40 text-cyan-300 text-sm shadow-2xl flex items-center gap-3 animate-bounce';
+            toast.innerHTML = '<i class="fa-solid fa-circle-check text-lg"></i><span>Downloading Resume for Palaka Balavardhanaraju...</span>';
+            document.body.appendChild(toast);
+            
+            setTimeout(() => {
+                toast.remove();
+            }, 4000);
+        }
+
+        // Animated Number Counters on Scroll
+        let countersAnimated = false;
+        function animateCounters() {
+            const counters = document.querySelectorAll('.counter');
+            const speed = 200;
+
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                let count = 0;
+                const inc = target / speed;
+
+                const updateCount = () => {
+                    count += Math.max(1, Math.ceil(inc));
+                    if (count < target) {
+                        counter.innerText = count;
+                        setTimeout(updateCount, 40);
+                    } else {
+                        counter.innerText = target + (target === 100 ? '%' : '+');
+                    }
+                };
+
+                updateCount();
+            });
+        }
+
+        // Trigger Counter Animation when Stats section comes into view
+        window.addEventListener('scroll', () => {
+            const statsSection = document.querySelector('.counter');
+            if (statsSection && !countersAnimated) {
+                const rect = statsSection.getBoundingClientRect();
+                if (rect.top <= window.innerHeight) {
+                    animateCounters();
+                    countersAnimated = true;
+                }
+            }
+        });
+    </script>
+</body>
+</html>
